@@ -40,17 +40,20 @@
             finalTotal += salesTax;
             
             document.getElementById('NumItemsTitle').innerHTML +="Items ordered: <br>";
-            document.getElementById('columns1').innerHTML += "Number of hot dogs: <br>";
-            document.getElementById('columns2').innerHTML += numHotdogs + "<br>";
+            if(numHotdogs > 0){
+                document.getElementById('columns1').innerHTML += "Number of hot dogs: <br>";
+                document.getElementById('columns2').innerHTML += numHotdogs + "<br>";
+            }
             
+            if(numFries > 0){
             document.getElementById('columns1').innerHTML += "Number of french fries: <br>";
             document.getElementById('columns2').innerHTML +=  numFries + "<br>";
-            
+            }
+            if(numSodas > 0){
             document.getElementById('columns1').innerHTML += "Number of sodas: <br>";
             document.getElementById('columns2').innerHTML += numSodas + "<br>";
-            
-            <!-- document.write("<br>");
-            <!-- document.write("<br>"); --> -->
+            }
+
             subTotal = +subTotal.toFixed(2);
             document.getElementById('columns1').innerHTML += "Subtotal: <br>";
             document.getElementById('columns2').innerHTML += "$" + subTotal + "<br>";
