@@ -14,7 +14,9 @@ h1{
 
 #wrapperDiv{
     margin: auto;
-    width: 48%;
+    width: 50%;
+    padding-left: 290px;
+    font-size: 20px;
 }
 
 

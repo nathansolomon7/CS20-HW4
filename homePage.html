@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Joe's Hotdogs</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+    <div id="wrapperDiv">
+        <div class="Title">
+            <h1>Joe's Pizza</h1>
+        </div>
+        <div id="NumItemsTitle">
+            
+        </div>
+        <div id="columns1">
+            
+        </div>
+        <div id="columns2">
+            
+        </div>
+        <script type="text/javascript">
+            let numHotdogs = prompt("How many hotdogs do you want?", "");
+            let numFries = prompt("How many fries do you want?", "");
+            let numSodas = prompt("How many sodas do you want?", "");
+            let subTotal = 0;
+            subTotal = ((numHotdogs * 3.75) + (numFries * 2.00) + (numSodas * 1.80));
+            console.log("SubTotal: " + subTotal);
+            var finalTotal = 0;
+            if(subTotal > 20){
+                var discount = subTotal * .10;
+                finalTotal = subTotal;
+                finalTotal -= discount;
+            }
+            else{
+                finalTotal = subTotal;
+            }
+            
+            salesTax = finalTotal * .0625;
+            finalTotal += salesTax;
+            
+            document.getElementById('NumItemsTitle').innerHTML +="Items ordered: <br>";
+            document.getElementById('columns1').innerHTML += "Number of hot dogs: <br>";
+            document.getElementById('columns2').innerHTML += numHotdogs + "<br>";
+            
+            document.getElementById('columns1').innerHTML += "Number of french fries: <br>";
+            document.getElementById('columns2').innerHTML +=  numFries + "<br>";
+            
+            document.getElementById('columns1').innerHTML += "Number of sodas: <br>";
+            document.getElementById('columns2').innerHTML += numSodas + "<br>";
+            
+            <!-- document.write("<br>");
+            <!-- document.write("<br>"); --> -->
+            subTotal = +subTotal.toFixed(2);
+            document.getElementById('columns1').innerHTML += "Subtotal: <br>";
+            document.getElementById('columns2').innerHTML += "$" + subTotal + "<br>";
+            if(subTotal > 20){
+                discount = +discount.toFixed(2);
+                document.getElementById('columns1').innerHTML += "Discount: <br>";
+                 document.getElementById('columns2').innerHTML += "$" + discount + "<br>";
+            }
+            
+            salesTax = +salesTax.toFixed(2);
+            finalTotal = +finalTotal.toFixed(2);
+            document.getElementById('columns1').innerHTML += "Tax: <br>";
+            document.getElementById('columns2').innerHTML += "$" + salesTax + "<br>";
+            
+            document.getElementById('columns1').innerHTML += "Final Total: <br>";
+            document.getElementById('columns2').innerHTML += "$" + finalTotal + "<br>"
+        </script>
+    </div>
+    </body>
+</html>
